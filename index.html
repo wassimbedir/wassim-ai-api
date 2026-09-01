@@ -922,6 +922,46 @@ function addMessage(text,type){
 
 }
 
+function addStreamingMessage(text){
+
+    const message = document.createElement("div");
+
+    message.className = "message ai";
+
+    const bubble = document.createElement("div");
+
+    bubble.className = "bubble";
+
+    message.appendChild(bubble);
+
+    chatInner.appendChild(message);
+
+    let index = 0;
+
+    const speed = 20;
+
+    function type(){
+
+        if(index < text.length){
+
+            bubble.textContent += text[index];
+
+            index++;
+
+            chat.scrollTop = chat.scrollHeight;
+
+            setTimeout(type, speed);
+
+        }
+
+    }
+
+    type();
+
+    return message;
+
+}
+
 function showTyping(){
 
     hideTyping();
@@ -1106,10 +1146,7 @@ try{
         
         if(data.reply){
 
-            addMessage(
-                data.reply,
-                "ai"
-            );
+            addStreamingMessage(data.reply);
 
             currentMessages.push({
 
