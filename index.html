@@ -429,8 +429,97 @@ grid-template-columns:1fr;
 .bubble{
 max-width:90%;
 }
+/* ===== تحسينات وسيم AI ===== */
+
+.suggestion{
+transition:
+transform .18s ease,
+background .18s ease,
+border-color .18s ease,
+color .18s ease;
+}
+
+.suggestion:hover{
+transform:translateY(-2px);
+background:#171717;
+border-color:#3a3a3a;
+color:#fff;
+}
+
+.suggestion:active{
+transform:scale(.98);
+}
+
+.send{
+transition:
+transform .15s ease,
+opacity .2s ease,
+box-shadow .2s ease;
+}
+
+.send:hover:not(:disabled){
+transform:scale(1.05);
+box-shadow:0 0 20px rgba(212,175,55,.18);
+}
+
+.send:active:not(:disabled){
+transform:scale(.94);
+}
+
+.input-box{
+transition:
+border-color .2s ease,
+box-shadow .2s ease,
+background .2s ease;
+}
+
+.input-box:focus-within{
+border-color:#3a3a3a;
+box-shadow:
+0 0 0 1px rgba(212,175,55,.06),
+0 -5px 30px rgba(0,0,0,.3);
+}
+
+.bubble{
+transition:transform .18s ease;
+}
+
+.message{
+animation:messageIn .28s cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes messageIn{
+from{
+opacity:0;
+transform:translateY(10px) scale(.98);
+}
+to{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+}
+
+.typing span{
+animation:bounce 1.1s infinite ease-in-out;
+}
+
+@media(max-width:700px){
+
+.suggestion{
+padding:14px;
+}
+
+.bubble{
+font-size:14px;
+line-height:1.9;
+}
+
+.input-box{
+border-radius:18px;
+}
 
 }
+
 </style>
 </head>
 
