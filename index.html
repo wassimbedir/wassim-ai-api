@@ -1157,7 +1157,10 @@ async function sendMessage(){
     currentMessages.push({
 if(data.reply){
 
-            addStreamingMessage(data.reply);
+            addMessage(
+    data.reply,
+    "ai"
+);
 
             currentMessages.push({
 
