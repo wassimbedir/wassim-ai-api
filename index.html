@@ -888,7 +888,6 @@ function loadConversation(index){
 
     currentMessages.forEach(message=>{
 
-        addMessage(
             message.content,
             message.role === "user"
                 ? "user"
@@ -899,6 +898,7 @@ function loadConversation(index){
 
 }
 
+	
 function addMessage(text,type){
 
     const message = document.createElement("div");
@@ -1142,18 +1142,6 @@ async function sendMessage(){
         }
 
         
-    addMessage(
-        data.reply,
-        "ai"
-    );
-
-    currentMessages.push({
-
-    addMessage(
-        data.reply,
-        "ai"
-    );
-
         if(data.reply){
 
             addMessage(
@@ -1179,7 +1167,6 @@ async function sendMessage(){
             );
 
         }
-
 
     }catch(error){
 
