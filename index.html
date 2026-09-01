@@ -1154,13 +1154,12 @@ async function sendMessage(){
         "ai"
     );
 
-    currentMessages.push({
-if(data.reply){
+        if(data.reply){
 
             addMessage(
-    data.reply,
-    "ai"
-);
+                data.reply,
+                "ai"
+            );
 
             currentMessages.push({
 
@@ -1180,6 +1179,7 @@ if(data.reply){
             );
 
         }
+
 
     }catch(error){
 
