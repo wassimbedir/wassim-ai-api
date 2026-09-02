@@ -254,9 +254,7 @@ def register():
             }
         }), 201
 
-
-                         except
-    psycopg2.errors.UniqueViolation:
+    except psycopg2.errors.UniqueViolation:
 
         if 'conn' in locals():
             conn.rollback()
