@@ -264,8 +264,6 @@ def register():
             "error": "اسم المستخدم موجود من قبل"
         }), 409
 
-        except Exception as e:
-
         print("REGISTER ERROR:", repr(e), flush=True)
 
         if 'conn' in locals():
