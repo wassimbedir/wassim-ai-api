@@ -254,7 +254,7 @@ def register():
             }
         }), 201
 
-    except psycopg2.errors.UniqueViolation:
+        except psycopg2.errors.UniqueViolation:
 
         if 'conn' in locals():
             conn.rollback()
@@ -263,6 +263,8 @@ def register():
         return jsonify({
             "error": "اسم المستخدم موجود من قبل"
         }), 409
+
+    except Exception as e:
 
         print("REGISTER ERROR:", repr(e), flush=True)
 
@@ -276,7 +278,6 @@ def register():
         return jsonify({
             "error": "حدث خطأ أثناء إنشاء الحساب"
         }), 500
-
 
 # =========================
 # تسجيل الدخول
