@@ -541,7 +541,7 @@ def chat():
 
     if isinstance(history, list):
 
-        for item in history[-20:]:
+        for item in history[-6:]:
 
             if not isinstance(item, dict):
                 continue
