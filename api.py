@@ -576,7 +576,7 @@ def chat():
     }
 
     payload = {
-        "model": "openai/gpt-oss-20b",
+        "model": "groq/compound",
         "messages": messages
     }
 
