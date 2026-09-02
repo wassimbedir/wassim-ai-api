@@ -266,9 +266,18 @@ def register():
 
     except Exception as e:
 
-        return jsonify({
-            "error": "حدث خطأ أثناء إنشاء الحساب"
-        }), 500
+    print("REGISTER ERROR:", repr(e), flush=True)
+
+    if 'conn' in locals():
+        try:
+            conn.rollback()
+            conn.close()
+        except:
+            pass
+
+    return jsonify({
+        "error": "حدث خطأ أثناء إنشاء الحساب"
+    }), 500
 
 
 # =========================
